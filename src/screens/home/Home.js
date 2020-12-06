@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { View, StyleSheet, FlatList, Text, Image, Button, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, FlatList, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
 
 import dt from '../../../products.json';
-import logo from '../../../assets/images/logo-supera.png';
+import {images} from '../../../images';
 
 import { FontAwesome5 } from '@expo/vector-icons';
 
@@ -21,12 +21,12 @@ const Home = () => {
       data={data} 
       keyExtractor={item => item.id.toString()}
       renderItem={({item}) => {
-        // let imagePath = `../../../assets/images/${item.image}`;
+        let imagePath = images[item.id];
+
         return (
           <View style={styles.itemList}>
             <View style={styles.game}>
-              {/* <Image style={{ width: 60, height: 50}} 
-                source={require(imagePath)} /> */}
+              <Image style={{width: 60, height: 60}} source={imagePath}/>
               <View style={{width: 100}}>
                 <Text style={styles.name} >{item.name}</Text>
                 <Text style={styles.price} >${item.price}</Text>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   itemList: {
     borderBottomWidth: 0,
     backgroundColor: '#fff',
-    marginBottom: 40,
+    marginBottom: 20,
     borderRadius: 20,
     width: 320,
     height: 80,
