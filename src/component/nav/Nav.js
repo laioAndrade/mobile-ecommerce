@@ -10,7 +10,7 @@ const Nav = () => {
     <View style={styles.nav}>
       <Image style={styles.logo} source={logo}/>
       <TouchableOpacity >
-        <FontAwesome name="shopping-cart" size={24} color="white" />
+        <FontAwesome name="shopping-cart" size={34} color="white" />
       </TouchableOpacity>
     </View>
   )
