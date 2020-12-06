@@ -15,12 +15,13 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList 
+      <FlatList  
+      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
       data={data} 
       keyExtractor={item => item.id.toString()}
       renderItem={({item}) => {
-        let imagePath = `../../../assets/images/${item.image}`;
-        console.log(imagePath);
+        // let imagePath = `../../../assets/images/${item.image}`;
         return (
           <View style={styles.itemList}>
             <View style={styles.game}>
@@ -48,9 +49,11 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 170,
     flex: 1,
     alignItems: 'center',
+    marginHorizontal: 0,
+    marginVertical: 0,
+    padding: 0,
   },
 
   itemList: {
